@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Cart | E-Shop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                user-select: none;
+                font-family: 'Poppins', sans-serif;
+            }
+            p{
+                font-size: 15px;
+            }
+            i{
+                color: #EF5B0C;
+                font-size: 20px;
+                transition: 200ms ease;
+            }
+            i:hover{
+                color: #f19869;
+            }
+            nav{
+                background-color: #222;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 5%;
+            }
+            .logo h3{
+                font-family: 'Playball', sans-serif;
+                font-size: 30px;
+                color: #D4F6CC;
+            }
+            .call{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: .5rem;
+            }
+            .call h4{
+                font-weight: 200;
+                color: #D4F6CC;
+            }
+            .personal ul{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                align-items: center;
+                gap: 1rem;
+            }
+            .personal ul .balance{
+                font-size: 18px;
+            }
+            .links{
+                background-color: #eee;
+                padding: 10px 0;
+                display: flex;
+            }
+            .links ul{
+                list-style: none;
+                display: flex;
+                gap: 1rem;
+                margin: auto;
+            }
+            .links ul li a{
+                color: #222;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 18px;
+                transition: 200ms ease;
+                padding: 8px 10px;
+            }
+            .links ul li a:hover{
+                color: #444;
+                text-decoration: underline;
+            }
+            .links ul li .active{
+                background-color: #EF5B0C;
+                color: #D4F6CC;
+            }
+            .links ul li .active:hover{
+                text-decoration: none;
+                color: #D4F6CC;
+            }
+
+
+            /* End of header styles */
+
+
+
+            footer{
+                background-color: #555;
+                color: white;
+                padding: 20px 5%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 30px;
+            }
+            footer .logo h2{
+                font-family: 'Playball', sans-serif;
+                font-size: 40px;
+                cursor: pointer;
+                transition: 200ms ease;
+            }
+            footer .logo h2:hover{
+                color: #3CCF4E;
+            }
+            footer .copy{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .copy a{
+                color: #f19869;
+                text-decoration: none;
+                font-size: 17px;
+                font-weight: 600;
+                transition: 200ms ease;
+            }
+            footer .copy a:hover{
+                text-decoration: underline;
+                color: #EF5B0C;
+            }
+            /* scrollbar */
+            ::-webkit-scrollbar{
+                width: 12px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background: linear-gradient(#EF5B0C,#f9884b);
+                border-radius: 6px;
+            }
+            /* scrollbar */
+
+            main .title{
+                text-align: center;
+                margin: 20px 0;
+            }
+            main .title h1{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 40px;
+                text-transform: capitalize;
+            }
+            main .title .line{
+                width: 100px;
+                height: 5px;
+                background-color: #3CCF4E;
+                border-radius: 10px;
+                margin: auto;
+                margin-top: 10px;
+            }
+            main img{
+                width: 100%;
+            }
+            main section{
+                width: 90%;
+                margin: auto;
+                margin-top: 40px;
+                display: flex;
+                gap: 2rem;
+            }
+            main .table img{
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 3px;
+            }
+            main .table{
+                width: 70%;
+            }
+            main table{
+                width: 100%;
+            }
+            main table .tableTitle th{
+                border-bottom: solid gray 2px;
+                padding-bottom: 10px;
+            }
+            main table tr .images{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            main table tr .images .text p{
+                font-weight: 600;
+                font-size: 18px;
+                color: #333;
+            }
+            main table tr .mainPrice{
+                color: gray;
+                font-weight: 600;
+            }
+            main table tr .count{
+                background-color: rgb(171, 171, 171);
+                width: 40%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px;
+                border-radius: 50px;
+                color: white;
+                font-weight: 600;
+                align-items: center;
+            }
+            main table tr .count i{
+                font-size: 15px;
+                color: #333;
+            }
+            main table tr .close{
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+                margin: auto;
+                color: #222;
+                font-weight: 600;
+            }
+            main table tr .close i{
+                font-size: 20px;
+            }
+            main section .total{
+                width: 25%;
+            }
+            main section .total .mny{
+                background-color: #D4F6CC;
+                border-radius: 2px;
+            }
+            main section .total .mny h1{
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                font-size: 30px;
+                color: #EF5B0C;
+                border-bottom: solid 1px black;
+            }
+            main section .total .mny .money{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                padding: 0 20px;
+            }
+            main section .total .mny .money p{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            main section .total .mny .money p:nth-child(2){
+                color: #3CCF4E;
+            }
+            main section .total .mny .money:nth-child(4){
+                background-color: gainsboro;
+                padding: 10px;
+            }
+            main section .total button{
+                width: 100%;
+                margin-top: 5px;
+                border: none;
+                padding: 15px 0;
+                font-weight: 600;
+                font-size: 18px;
+                text-transform: capitalize;
+                background-color: #3CCF4E;
+                color: white;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="call">
+                <!-- https://colorhunt.co/palette/003865ef5b0cd4f6cc3ccf4e -->
+                <div class="icon">
+                    <i class="fa-solid fa-headphones"></i>
+                </div>
+                <div class="text">
+                    <h4>Call Us</h4>
+                    <p>+250-791-847-408</p>
+                </div>
+            </div>
+            <div class="logo">
+                <h3>E-Haha</h3>
+            </div>
+            <div class="personal">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="balance">&dollar;800.00</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="title">
+            <h1>My cart</h1>
+            <div class="line"></div>
+        </div>
+        <section>
+            <div class="table">
+                <table>
+                    <tr class="tableTitle">
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+
+                    <tr>
+                        <td class="images">
+                            <div class="image">
+                                <img src="images/yogurt.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Yogurt</p>
+                            </div>
+                        </td>
+                        <td class="mainPrice">&dollar;50.00</td>
+                        <td>
+                            <div class="count">
+                                <i class="fa-solid fa-minus"></i>
+                                <p>2</p>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="close">
+                                <p>&dollar;100.00</p>
+                            <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="images">
+                            <div class="image">
+                                <img src="images/snacks.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Snacks</p>
+                            </div>
+                        </td>
+                        <td class="mainPrice">&dollar;25.00</td>
+                        <td>
+                            <div class="count">
+                                <i class="fa-solid fa-minus"></i>
+                                <p>4</p>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="close">
+                                <p>&dollar;100.00</p>
+                            <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="images">
+                            <div class="image">
+                                <img src="images/muffins.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Muffins</p>
+                            </div>
+                        </td>
+                        <td class="mainPrice">&dollar;100.00</td>
+                        <td>
+                            <div class="count">
+                                <i class="fa-solid fa-minus"></i>
+                                <p>3</p>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="close">
+                                <p>&dollar;300.00</p>
+                            <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="images">
+                            <div class="image">
+                                <img src="images/Milk.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Milk</p>
+                            </div>
+                        </td>
+                        <td class="mainPrice">&dollar;10.00</td>
+                        <td>
+                            <div class="count">
+                                <i class="fa-solid fa-minus"></i>
+                                <p>5</p>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="close">
+                                <p>&dollar;50.00</p>
+                            <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="images">
+                            <div class="image">
+                                <img src="images/rice-1.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Rice</p>
+                            </div>
+                        </td>
+                        <td class="mainPrice">&dollar;5.00</td>
+                        <td>
+                            <div class="count">
+                                <i class="fa-solid fa-minus"></i>
+                                <p>1</p>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="close">
+                                <p>&dollar;5.00</p>
+                            <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="images">
+                            <div class="image">
+                                <img src="images/Instant noodles.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>noodles</p>
+                            </div>
+                        </td>
+                        <td class="mainPrice">&dollar;10.00</td>
+                        <td>
+                            <div class="count">
+                                <i class="fa-solid fa-minus"></i>
+                                <p>10</p>
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="close">
+                                <p>&dollar;100.00</p>
+                            <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="total">
+                <div class="mny">
+                    <h1>Order Summary</h1>
+                    <div class="money">
+                        <p>Subtotal</p>
+                        <p>&dollar;655.00</p>
+                    </div>
+                    <div class="money">
+                        <p>Shipping</p>
+                        <p>&dollar;15.00</p>
+                    </div>
+                    <div class="money">
+                        <p>Total</p>
+                        <p>&dollar;670.00</p>
+                    </div>
+                </div>
+                <a href="#"><button>checkout</button></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo">
+            <h2>E-Haha</h2>
+        </div>
+        <div class="thanks">
+            Thank you for visiting our website
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; 2023 <a href="#">nshiziboi</a></p>
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

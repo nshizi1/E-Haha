@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>E-Haha</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        p{
+            font-size: 15px;
+        }
+        i{
+            color: #EF5B0C;
+            font-size: 20px;
+            transition: 200ms ease;
+        }
+        i:hover{
+            color: #f19869;
+        }
+        nav{
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+        }
+        .logo h3{
+            font-family: 'Playball', sans-serif;
+            font-size: 30px;
+            color: #D4F6CC;
+        }
+        .call{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+        }
+        .call h4{
+            font-weight: 200;
+            color: #D4F6CC;
+        }
+        .personal ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            align-items: center;
+            gap: 1rem;
+        }
+        .personal ul .balance{
+            font-size: 18px;
+        }
+        .links{
+            background-color: #eee;
+            padding: 10px 0;
+            display: flex;
+        }
+        .links ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: auto;
+        }
+        .links ul li a{
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: 200ms ease;
+            padding: 8px 10px;
+        }
+        .links ul li a:hover{
+            color: #444;
+            text-decoration: underline;
+        }
+        .links ul li .active{
+            background-color: #EF5B0C;
+            color: #D4F6CC;
+        }
+        .links ul li .active:hover{
+            text-decoration: none;
+            color: #D4F6CC;
+        }
+        .main{
+            position: relative;
+        }
+        .main .image img{
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            filter: brightness(30%);
+        }
+        .main .text{
+            position: absolute;
+            top: 45%;
+            left: 5%;
+            color: white;
+        }
+        .main .text h1{
+            font-size: 40px;
+            color: #3CCF4E;
+        }
+        .main .text p{
+            color: #D4F6CC;
+            font-size: 17px;
+        }
+        .main .text button{
+            padding: 10px 30px;
+            margin-top: 10px;
+            border: none;
+            background: linear-gradient(#3CCF4EFF, #013107ea);
+            color: #D4F6CC;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .main .text button:hover{
+            background: linear-gradient(#013107ea, #3CCF4EFF);
+        }
+        .qualities{
+            border-bottom: solid gray 1px;
+            padding: 40px 5%;
+        }
+        .qualities .cards{
+            display: flex;
+            justify-content: space-between;
+        }
+        .qualities .cards .card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .qualities .cards .card i{
+            font-size: 30px;
+        }
+        .qualities .cards .card h3{
+            text-transform: uppercase;
+        }
+        .qualities .cards .card p{
+            color: grey;
+        }
+        .title{
+            padding: 40px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title h1{
+            color: #222;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: capitalize;
+            font-size: 45px;
+            font-weight: 600;
+        }
+        .title p{
+            color: grey;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        .title .line{
+            width: 100px;
+            margin-top: 20px;
+            border-radius: 50px;
+            background-color: #3CCF4E;
+            height: 5px;
+        }
+        .category .cards .card img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: 200ms ease;
+        }
+        .category .cards .card img:hover{
+            transform: scale(1.2) rotate(5deg);
+        }
+        .category .cards .card .image{
+            overflow: hidden;
+            border: solid #222 1px;
+        }
+        .category .cards{
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            width: 90%;
+            margin: auto;
+        }
+        .category .cards .card .text p{
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .category .cards .card a{
+            color: #222;
+            text-decoration: none;
+        }
+        .deals{
+            width: 90%;
+            margin: auto;
+        }
+        .deals .cards{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .deals .cards .card img{
+            width: 100%;
+        }
+        .deals .cards .card{
+            border: solid #3CCF4E 5px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .deals .cards .card .content p{
+            color: grey;
+        }
+        .deals .cards .card .content h4{
+            font-weight: 600;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .deals .cards .card .content h3{
+            font-size: 30px;
+            color: #3CCF4E;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .deals .cards .card .content .ending p{
+            color: #222;
+            font-weight: 500;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        .deals .cards .card .content .ending .time{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .deals .cards .card .content .ending .time p{
+            text-transform: uppercase;
+        }
+        .deals .cards .card .content .ending .time .nbr{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            background-color: #3CCF4E;
+            color: whitesmoke;
+        }
+        .deals .cards .card .content .ending .times{
+            display: grid;
+            text-align: left;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .featured .filter-title{
+            width: 90%;
+            margin: auto;
+        }
+        .featured .filter-title ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            gap: 1rem;
+        }
+        .featured .filter-title ul li{
+            color: #222;
+            font-weight: 500;
+        }
+        .featured .cards{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+        .featured .cards .card img{
+            width: 100%;
+        }
+        .featured .cards .card{
+            border: solid #555 1px;
+            padding: 20px;
+            text-align: center;
+        }
+        .featured .cards .card .content p{
+            color: grey;
+        }
+        .featured .cards .card .content h4{
+            font-weight: 600;
+            font-size: 17px;
+            margin-top: 7px;
+        }
+        .featured .cards .card .content h3{
+            color: #3CCF4E;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 10px 0;
+        }
+        .featured .cards .card .content button{
+            padding: 8px 30px;
+            background-color: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 200ms ease;
+        }
+        .featured .cards .card .content button:hover{
+            background-color: #444;
+            box-shadow: 0 0 25px 5px gray;
+        }
+        .organic{
+            margin-top: 50px;
+            position: relative;
+        }
+        .organic .image img{
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+            filter: brightness(50%);
+        }
+        .organic .image{
+            position: relative;
+        }
+        .organic .image .image-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+        }
+        .organic .image .image-text h3{
+            font-size: 35px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #fff;
+        }
+        .organic .image .image-text h2{
+            font-size: 100px;
+            color: #3CCF4E;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .organic .image .image-text p{
+            margin-top: 15px;
+            font-size: 17px;
+        }
+        .organic .image .image-text button{
+            padding: 20px 30px;
+            border: none;
+            background-color: #3CCF4E;
+            color: white;
+            border-radius: 7px;
+            margin-top: 10px;
+            font-size: 17px;
+        }
+        .news .cards{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            width: 90%;
+            margin: auto;
+        }
+        .news .cards .card .image{
+            overflow: hidden;
+        }
+        .news .cards .card img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: 200ms ease;
+            cursor: pointer;
+        }
+        .news .cards .card img:hover{
+            transform: scale(1.2);
+        }
+        .news .cards .card .date{
+            color: #3CCF4E;
+            margin-top: 30px;
+        }
+        .news .cards .card h4{
+            text-transform: capitalize;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .news .cards .card p{
+            color: grey;
+            font-size: 16px;
+        }
+        .news .cards .card a{
+            color: #3CCF4E;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+        /* scrollbar */
+        ::-webkit-scrollbar{
+            width: 12px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(#EF5B0C,#f9884b);
+            border-radius: 6px;
+        }
+        /* scrollbar */
+        footer{
+            background-color: #555;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        footer .logo h2{
+            font-family: 'Playball', sans-serif;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 200ms ease;
+        }
+        footer .logo h2:hover{
+            color: #3CCF4E;
+        }
+        footer .copy{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer .copy a{
+            color: #f19869;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 200ms ease;
+        }
+        footer .copy a:hover{
+            text-decoration: underline;
+            color: #EF5B0C;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="call">
+                <!-- https://colorhunt.co/palette/003865ef5b0cd4f6cc3ccf4e -->
+                <div class="icon">
+                    <i class="fa-solid fa-headphones"></i>
+                </div>
+                <div class="text">
+                    <h4>Call Us</h4>
+                    <p>+250-791-847-408</p>
+                </div>
+            </div>
+            <div class="logo">
+                <h3>E-Haha</h3>
+            </div>
+            <div class="personal">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="balance">&dollar;800.00</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="links">
+            <ul>
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main">
+        <div class="image">
+            <img src="images/main.jpg" alt="">
+        </div>
+        <div class="text">
+            <h1>Health Food & Organic market</h1>
+            <p>All natural products</p>
+            <a href="#"><button>Shop Now</button></a>
+        </div>
+    </div>
+    <div class="qualities">
+        <div class="cards">
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="text">
+                    <h3>free dlivery</h3>
+                    <p>For all orders above $100</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-map"></i></div>
+                <div class="text">
+                    <h3>Delivery Anywhere</h3>
+                    <p>At a fast transport</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon"><i class="fa-regular fa-credit-card"></i></div>
+                <div class="text">
+                    <h3>secure payment</h3>
+                    <p>100% secure payment</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-message"></i></div>
+                <div class="text">
+                    <h3>24/7 support</h3>
+                    <p>Dedicated support</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="category">
+        <div class="title">
+            <h1>Shop by category</h1>
+            <p>Visit our shop to see amazing products</p>
+            <div class="line"></div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <a href="#">
+                    <div class="image">
+                        <img src="images/meat&seafood.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Meat and Seafood</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                    <div class="image">
+                        <img src="images/diary&eggs.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Dairy and Eggs</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                    <div class="image">
+                        <img src="images/bakery&bread.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Bakery and Bread</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                    <div class="image">
+                        <img src="images/beverages.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Beverages</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#">
+                    <div class="image">
+                        <img src="images/tea&coffee.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Tea and Coffee</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="deals">
+        <div class="title">
+            <h1>Deals of today</h1>
+            <p>Visit our shop to see amazing products</p>
+            <div class="line"></div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Sourdough</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quasi! Suscipit iure perferendis dolorum harum.</p>
+                    <h3>&dollar;99.99</h3>
+                    <div class="ending">
+                        <p>Deal ends in</p>
+                        <div class="times">
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>121</h5>
+                                </div>
+                                <p>days</p>
+                            </div>
+    
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>17</h5>
+                                </div>
+                                <p>hrs</p>
+                            </div>
+    
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>36</h5>
+                                </div>
+                                <p>min</p>
+                            </div>
+    
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>42</h5>
+                                </div>
+                                <p>sec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/meat&seafood.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Sourdough</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quasi! Suscipit iure perferendis dolorum harum.</p>
+                    <h3>&dollar;99.99</h3>
+                    <div class="ending">
+                        <p>Deal ends in</p>
+                        <div class="times">
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>121</h5>
+                                </div>
+                                <p>days</p>
+                            </div>
+    
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>17</h5>
+                                </div>
+                                <p>hrs</p>
+                            </div>
+    
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>36</h5>
+                                </div>
+                                <p>min</p>
+                            </div>
+    
+                            <div class="time">
+                                <div class="nbr">
+                                    <h5>42</h5>
+                                </div>
+                                <p>sec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="featured">
+        <div class="title">
+            <h1>Featured Products</h1>
+            <p>Visit our shop to see amazing products</p>
+            <div class="line"></div>
+        </div>
+        <div class="filter-title">
+            <ul>
+                <li>Milk & Cream</li>
+                <li>Butter & Eggs</li>
+                <li>Fruits</li>
+                <li>Vegetables</li>
+                <li>Fresh Meat</li>
+                <li>Ocean Foods</li>
+            </ul>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/diary&eggs.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p>Food & Grocery</p>
+                    <h4>Blueberry Danish Round</h4>
+                    <h3>&dollar;156.99</h3>
+                    <a href="#"><button>Add To Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="organic">
+        <div class="image">
+            <img src="images/organic.jpg" alt="">
+            <div class="image-text">
+                <h3>Live Organic</h3>
+                <h2>Live Healthy</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quia accusamus nisi ut consequuntur autem quis? Dicta sapiente esse nostrum magni consectetur rem vel quae enim.</p>
+                <a href="#"><button>Explore Products</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="news">
+        <div class="title">
+            <h1>Latest News</h1>
+            <p>Don't miss our latest updates</p>
+            <div class="line"></div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="image">
+                    <img src="images/news1-0.jpeg" alt="">
+                </div>
+                <p class="date">January 13, 2020</p>
+                <h4>Lorem ipsum dolor sit, amet consectetur adipisicing.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptatibus quidem magnam a soluta, doloremque iste recusandae distinctio ex totam!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/news2.jpg" alt="">
+                </div>
+                <p class="date">January 13, 2020</p>
+                <h4>Lorem ipsum dolor sit, amet consectetur adipisicing.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptatibus quidem magnam a soluta, doloremque iste recusandae distinctio ex totam!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="images/news3.jpg" alt="">
+                </div>
+                <p class="date">January 13, 2020</p>
+                <h4>Lorem ipsum dolor sit, amet consectetur adipisicing.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptatibus quidem magnam a soluta, doloremque iste recusandae distinctio ex totam!</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="logo">
+            <h2>E-Haha</h2>
+        </div>
+        <div class="thanks">
+            Thank you for visiting our website
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; 2023 <a href="#">nshiziboi</a></p>
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

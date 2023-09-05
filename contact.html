@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>E-haha | Contact Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        p{
+            font-size: 15px;
+        }
+        i{
+            color: #EF5B0C;
+            font-size: 20px;
+            transition: 200ms ease;
+        }
+        i:hover{
+            color: #f19869;
+        }
+        nav{
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+        }
+        .logo h3{
+            font-family: 'Playball', sans-serif;
+            font-size: 30px;
+            color: #D4F6CC;
+        }
+        .call{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+        }
+        .call h4{
+            font-weight: 200;
+            color: #D4F6CC;
+        }
+        .personal ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            align-items: center;
+            gap: 1rem;
+        }
+        .personal ul .balance{
+            font-size: 18px;
+        }
+        .links{
+            background-color: #eee;
+            padding: 10px 0;
+            display: flex;
+        }
+        .links ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: auto;
+        }
+        .links ul li a{
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: 200ms ease;
+            padding: 8px 10px;
+        }
+        .links ul li a:hover{
+            color: #444;
+            text-decoration: underline;
+        }
+        .links ul li .active{
+            background-color: #EF5B0C;
+            color: #D4F6CC;
+        }
+        .links ul li .active:hover{
+            text-decoration: none;
+            color: #D4F6CC;
+        }
+
+
+        /* End of header styles */
+
+
+
+
+
+        footer{
+            background-color: #555;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        footer .logo h2{
+            font-family: 'Playball', sans-serif;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 200ms ease;
+        }
+        footer .logo h2:hover{
+            color: #3CCF4E;
+        }
+        footer .copy{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer .copy a{
+            color: #f19869;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 200ms ease;
+        }
+        footer .copy a:hover{
+            text-decoration: underline;
+            color: #EF5B0C;
+        }
+
+
+        /* end of footer */
+
+
+        .mainImage img{
+            width: 100%;
+        }
+        .mainImage{
+            position: relative;
+        }
+        .mainImage .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            text-align: center;
+        }
+        .mainImage .image img{
+            filter: brightness(50%);
+            height: 60vh;
+            object-fit: cover;
+        }
+        .mainImage .content .text h2{
+            font-family: 'Playball',sans-serif;
+            font-size: 40px;
+            color: #3CCF4E;
+        }
+        .mainImage .content .text p{
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .mainImage .content .text button{
+            padding: 10px 30px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: #EF5B0C;
+            color: #D4F6CC;
+            cursor: pointer;
+            transition: 200ms ease;
+        }
+        .mainImage .content .text button:hover{
+            background-color: #f9884b;
+        }
+
+
+        /* scrollbar */
+        ::-webkit-scrollbar{
+            width: 12px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(#EF5B0C,#f9884b);
+            border-radius: 6px;
+        }
+        /* scrollbar */
+
+
+
+
+        .main .map{
+            width: 90%;
+            height: 60vh;
+            margin: auto;
+            margin-top: 30px;
+            border: solid #3CCF4E 2px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .main .map iframe{
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        
+
+        .form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 90%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .form h2{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+            color: #EF5B0C;
+            margin-bottom: 20px;
+        }
+        .form .forms form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form .forms form input,textarea{
+            margin-bottom: 10px;
+            padding: 10px;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            border: solid 1px #EF5B0C;
+            width: 100%;
+        }
+        .form .forms form button{
+            padding: 10px 30px;
+            background-color: #3CCF4E;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 200ms ease;
+        }
+
+        .form .forms form textarea{
+            height: 200px;
+            resize: none;
+        }
+        .form .forms form textarea::-webkit-scrollbar{
+            width: 10px;
+        }
+        .form .forms form textarea::-webkit-scrollbar-thumb{
+            background: linear-gradient(#267f31,#EF5B0C);
+            border-radius: 6px;
+        }
+        .form .forms form button:hover{
+            background-color: #267f31;
+        }
+        .form .info{
+            background-color: #D4F6CC;
+            padding: 10px 30px;
+            border-radius: 20px;
+            transition: 300ms ease;
+        }
+        .form .info:hover{
+            cursor: pointer;
+            box-shadow:  10px 10px 15px grey,
+                         -10px -10px 15px white;
+        }
+        .form .info .cards{
+            display: flex;
+            height: 80%;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .form .info .cards .card{
+            display: flex;
+        }
+        .form .info .cards .card i{
+            width: 100px;
+            font-size: 30px;
+            color: #3CCF4E;
+        }
+        .form .info .cards .card p{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .connect{
+            width: 90%;
+            margin: auto;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .connect h1{
+            font-family: 'Playball',sans-serif;
+            font-size: 50px;
+            color: #3CCF4E;
+            margin-bottom: 20px;
+        }
+        .connect .links{
+            background-color: transparent;
+        }
+        .connect .links i{
+            font-size: 30px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="call">
+                <!-- https://colorhunt.co/palette/003865ef5b0cd4f6cc3ccf4e -->
+                <div class="icon">
+                    <i class="fa-solid fa-headphones"></i>
+                </div>
+                <div class="text">
+                    <h4>Call Us</h4>
+                    <p>+250-791-847-408</p>
+                </div>
+            </div>
+            <div class="logo">
+                <h3>E-Haha</h3>
+            </div>
+            <div class="personal">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="balance">&dollar;800.00</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main">
+        <div class="mainImage">
+            <div class="image">
+                <img src="images/contactMain.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="text">
+                    <h2>Contact For Customer Care</h2>
+                    <p>Get in touch to explore and order our exquisite food selection.</p>
+                    <a href="#form"><button>Connect</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <iframe title="google map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d773.8947095434648!2d30.09091322820157!3d-1.9166879084565025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2srw!4v1691571468103!5m2!1sen!2srw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="form" class="form">
+            <div class="forms">
+                <h2>Send Message</h2>
+                <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="email" name="" placeholder="email">
+                        <input type="text" name="" placeholder="Subject">
+                    <textarea name="" placeholder="Enter Your Message" spellcheck="" ></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="info">
+                <h2>Information</h2>
+                <div class="cards">
+                    <div class="card">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>wilsonnshi1@gmail.com</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+250-791-847-408</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Kigali-Kanombe</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>08:00-21:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="connect">
+            <h1>Connect With Us !</h1>
+            <div class="links">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="logo">
+            <h2>E-Haha</h2>
+        </div>
+        <div class="thanks">
+            Thank you for visiting our website
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; 2023 <a href="#">nshiziboi</a></p>
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

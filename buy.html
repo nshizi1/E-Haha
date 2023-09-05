@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Buy Now | E-Shop</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                user-select: none;
+                font-family: 'Poppins', sans-serif;
+            }
+            p{
+                font-size: 15px;
+            }
+            i{
+                color: #EF5B0C;
+                font-size: 20px;
+                transition: 200ms ease;
+            }
+            i:hover{
+                color: #f19869;
+            }
+            nav{
+                background-color: #222;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 5%;
+            }
+            .logo h3{
+                font-family: 'Playball', sans-serif;
+                font-size: 30px;
+                color: #D4F6CC;
+            }
+            .call{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: .5rem;
+            }
+            .call h4{
+                font-weight: 200;
+                color: #D4F6CC;
+            }
+            .personal ul{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                align-items: center;
+                gap: 1rem;
+            }
+            .personal ul .balance{
+                font-size: 18px;
+            }
+            .links{
+                background-color: #eee;
+                padding: 10px 0;
+                display: flex;
+            }
+            .links ul{
+                list-style: none;
+                display: flex;
+                gap: 1rem;
+                margin: auto;
+            }
+            .links ul li a{
+                color: #222;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 18px;
+                transition: 200ms ease;
+                padding: 8px 10px;
+            }
+            .links ul li a:hover{
+                color: #444;
+                text-decoration: underline;
+            }
+            .links ul li .active{
+                background-color: #EF5B0C;
+                color: #D4F6CC;
+            }
+            .links ul li .active:hover{
+                text-decoration: none;
+                color: #D4F6CC;
+            }
+
+
+            /* End of header styles */
+
+
+
+            footer{
+                background-color: #555;
+                color: white;
+                padding: 20px 5%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 30px;
+            }
+            footer .logo h2{
+                font-family: 'Playball', sans-serif;
+                font-size: 40px;
+                cursor: pointer;
+                transition: 200ms ease;
+            }
+            footer .logo h2:hover{
+                color: #3CCF4E;
+            }
+            footer .copy{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .copy a{
+                color: #f19869;
+                text-decoration: none;
+                font-size: 17px;
+                font-weight: 600;
+                transition: 200ms ease;
+            }
+            footer .copy a:hover{
+                text-decoration: underline;
+                color: #EF5B0C;
+            }
+            /* scrollbar */
+            ::-webkit-scrollbar{
+                width: 12px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background: linear-gradient(#EF5B0C,#f9884b);
+                border-radius: 6px;
+            }
+            /* scrollbar */
+
+
+            main img{
+                width: 100%;
+            }
+            main{
+                width: 90%;
+                margin: auto;
+                margin-top: 30px;
+            }
+            main h2{
+                text-transform: uppercase;
+                font-size: 30px;
+                font-family: 'Times New Roman', Times, serif;
+                color: #3CCF4E;
+                margin-bottom: 10px;
+            }
+            main .product{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                margin-bottom: 20px;
+            }
+            main .product img{
+                border-radius: 5px;
+                width: 80%;
+            }
+            main .product .description .stock{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                align-items: center;
+            }
+            main .product .description .stock p{
+                font-size: 18px;
+            }
+            main .product .description .stock p:nth-child(1){
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+            main .product .description .price{
+                display: flex;
+                align-items: center;
+                gap: .3rem;
+            }
+            main .product .description .price .mainPrice h3{
+                font-size: 30px;
+                color: #3CCF4E;
+            }
+            main .product .description .price .other p{
+                line-height: 15px;
+                text-transform: capitalize;
+            }
+            main .product .description .price .other p:nth-child(1){
+                font-weight: 700;
+                color: gray;
+            }
+            main .product .description .price .other p span{
+                color: #3CCF4E;
+                font-weight: 600;
+            }
+            main .product .description .cart{
+                background-color: #D4F6CC;
+                padding: 10px;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+            }
+            main .product .description .cart select{
+                padding: 10px;
+                outline: none;
+                border: none;
+                border-radius: 3px;
+                font-size: 20px;
+                font-weight: 600;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            main .product .description .cart button{
+                padding: 11px 20px;
+                border: none;
+                border-radius: 3px;
+                background-color: #3CCF4E;
+                color: white;
+                font-weight: 600;
+                text-transform: capitalize;
+                font-size: 18px;
+                cursor: pointer;
+            } 
+            main .product .description .features h3{
+                text-transform: uppercase;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 25px;
+                color: #EF5B0C;
+                margin-bottom: 10px;
+            }
+            main .product .description .features p{
+                margin-top: 10px;
+                font-size: 18px;
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+            main .product .description .draw{
+                margin-top: 50px;
+                display: flex;
+            }
+            main .product .description .draw div{
+                width: 100%;
+                height: 30px;
+            }
+            main .product .description .draw .one, .two{
+                border-top: solid #3CCF4E 2px;
+            }
+            main .product .description .draw .one{
+                border-top-right-radius: 50px;
+            }
+            main .product .description .draw .two{
+                border-top-left-radius: 50px;
+            }
+            main .otherProducts .cards{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 1rem;
+            }
+            main .otherProducts .cards .card{
+                padding: 10px;
+                border: solid 2px #EF5B0C;
+                border-radius: 3px;
+            }
+            main .otherProducts .cards .card img{
+                aspect-ratio: 0.9;
+                object-fit: cover;
+                border-radius: 3px;
+            }
+            main .otherProducts .title{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            main .otherProducts .title h1{
+                font-family: 'Times New Roman', Times, serif;
+                text-transform: capitalize;
+                font-size: 40px;
+            }
+            main .otherProducts .title .line{
+                width: 100px;
+                height: 5px;
+                border-radius: 10px;
+                background-color: #3CCF4E;
+                margin: auto;
+                margin-top: 10px;
+            }
+            main .otherProducts .cards .card .text{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+            }
+            main .otherProducts .cards .card .text p{
+                text-transform: capitalize;
+                font-size: 15px;
+                font-weight: 600;
+                color: #3CCF4E;
+            }
+            main .otherProducts .cards .card .text button{
+                padding: 8px 30px;
+                border: none;
+                border-radius: 3px;
+                background-color: #EF5B0C;
+                color: white;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 200ms ease;
+            }
+            main .otherProducts .cards .card .text button:hover{
+                background-color: #f9884b;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="call">
+                    <!-- https://colorhunt.co/palette/003865ef5b0cd4f6cc3ccf4e -->
+                    <div class="icon">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <div class="text">
+                        <h4>Call Us</h4>
+                        <p>+250-791-847-408</p>
+                    </div>
+                </div>
+                <div class="logo">
+                    <h3>E-Haha</h3>
+                </div>
+                <div class="personal">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li class="balance">&dollar;800.00</li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="#">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <h2>yogurt</h2>
+            <div class="product">
+                <div class="image">
+                    <img src="images/productImage.jpg" alt="">
+                </div>
+                <div class="description">
+                    <div class="stock">
+                        <p>in stock</p>
+                        <p><i class="fa-solid fa-share"></i> share</p>
+                    </div>
+                    <div class="price">
+                        <div class="mainPrice">
+                            <h3>&dollar;50.00</h3>
+                        </div>
+                        <div class="other">
+                            <p><strike>&dollar;60.00</strike></p>
+                            <p><span>instant savings &dollar;10.00</span> Offer ends Aug 30 at 12:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <select name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                        <a href="#"><button>add to cart</button></a>
+                        <a href="#"><button>add to wishlist</button></a>
+                    </div>
+                    <div class="features">
+                        <h3>ingredients</h3>
+                        <p>cow milk</p>
+                        <p>sweeteners</p>
+                        <p>Flavorings</p>
+                        <p>Preservatives</p>
+                        <p>Vitamins and Minerals</p>
+                    </div>
+                    <div class="draw">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="otherProducts">
+                <div class="title">
+                    <h1>Other Products</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="img">
+                            <img src="images/cooking oil.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>Cooking Oil</p>
+                            <a href="#"><button>Buy now</button></a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="img">
+                            <img src="images/snacks.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>Snacks</p>
+                            <a href="#"><button>Buy now</button></a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="img">
+                            <img src="images/bakery&bread.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>Bakery</p>
+                            <a href="#"><button>Buy now</button></a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="img">
+                            <img src="images/Instant noodles.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p>Noodles</p>
+                            <a href="#"><button>Buy now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="logo">
+                <h2>E-Haha</h2>
+            </div>
+            <div class="thanks">
+                Thank you for visiting our website
+            </div>
+            <div class="copy">
+                <p>Copyright &copy; 2023 <a href="#">nshiziboi</a></p>
+                <p>All rights reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>

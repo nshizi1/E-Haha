@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About Us | E-Haha</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        p{
+            font-size: 15px;
+        }
+        i{
+            color: #EF5B0C;
+            font-size: 20px;
+            transition: 200ms ease;
+        }
+        i:hover{
+            color: #f19869;
+        }
+        nav{
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+        }
+        .logo h3{
+            font-family: 'Playball', sans-serif;
+            font-size: 30px;
+            color: #D4F6CC;
+        }
+        .call{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+        }
+        .call h4{
+            font-weight: 200;
+            color: #D4F6CC;
+        }
+        .personal ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            align-items: center;
+            gap: 1rem;
+        }
+        .personal ul .balance{
+            font-size: 18px;
+        }
+        .links{
+            background-color: #eee;
+            padding: 10px 0;
+            display: flex;
+        }
+        .links ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: auto;
+        }
+        .links ul li a{
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: 200ms ease;
+            padding: 8px 10px;
+        }
+        .links ul li a:hover{
+            color: #444;
+            text-decoration: underline;
+        }
+        .links ul li .active{
+            background-color: #EF5B0C;
+            color: #D4F6CC;
+        }
+        .links ul li .active:hover{
+            text-decoration: none;
+            color: #D4F6CC;
+        }
+
+
+        /* End of header styles */
+
+
+
+        footer{
+            background-color: #555;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        footer .logo h2{
+            font-family: 'Playball', sans-serif;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 200ms ease;
+        }
+        footer .logo h2:hover{
+            color: #3CCF4E;
+        }
+        footer .copy{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer .copy a{
+            color: #f19869;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 200ms ease;
+        }
+        footer .copy a:hover{
+            text-decoration: underline;
+            color: #EF5B0C;
+        }
+        /* scrollbar */
+        ::-webkit-scrollbar{
+            width: 12px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(#EF5B0C,#f9884b);
+            border-radius: 6px;
+        }
+        /* scrollbar */
+        .main img{
+            width: 100%;
+        }
+        .main{
+            position: relative;
+        }
+        .main .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            text-align: center;
+        }
+        .main .image img{
+            filter: brightness(50%);
+            height: 60vh;
+            object-fit: cover;
+        }
+        .main .content .text h2{
+            font-family: 'Playball',sans-serif;
+            font-size: 40px;
+            color: #3CCF4E;
+        }
+        .main .content .text p{
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .main .content .text button{
+            padding: 10px 30px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: #EF5B0C;
+            color: #D4F6CC;
+            cursor: pointer;
+            transition: 200ms ease;
+        }
+        .main .content .text button:hover{
+            background-color: #f9884b;
+        }
+        .title{
+            text-align: center;
+        }
+        .title .line{
+            width: 100px;
+            height: 5px;
+            border-radius: 10px;
+            background-color: #3CCF4E;
+            margin: auto;
+            margin-top: 10px;
+        }
+        .title h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 35px;
+        }
+        .aboutOne{
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            gap: 10rem;
+            align-items: center;
+        }
+        .aboutOne .short{
+            display: flex;
+            flex-direction: column;
+            gap: .7rem;
+            color: #3CCF4E;
+            font-weight: 600;
+        }
+        .aboutOne .short p{
+            font-size: 20px;
+        }
+        .aboutOne .long{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .imageOnly{
+            margin-top: 20px;
+        }
+        .imageOnly img{
+            width: 100%;
+            height: 55vh;
+            object-fit: cover;
+        }
+        span{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 70px;
+        }
+        .quote{
+            width: 90%;
+            height: 60vh;
+            margin: auto;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 1rem;
+        }
+        .quote img{
+            width: 100%;
+            border-radius: 5px;
+        }
+        .quote .text p{
+            font-family: 'Playball',sans-serif;
+            font-size: 40px;
+            color: #444;
+        }
+        .quote .text p i{
+            font-size: 40px;
+            /* background-color: red; */
+            /* margin-top: -10px; */
+        }
+        .team{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 30px;
+            align-items: center;
+        }
+        .team .images img{
+            width: 90%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .team .images{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+        .team .images .sideOne{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .team .content .title{
+            margin-bottom: 50px;
+        }
+        .team .content .title .line{
+            margin-top: 0;
+        }
+        .team .content p{
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .team .content .cards{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .team .content .cards .card h2{
+            color: #3CCF4E;
+        }
+
+    </style>
+</head>
+    <body>
+        <header>
+            <nav>
+                <div class="call">
+                    <!-- https://colorhunt.co/palette/003865ef5b0cd4f6cc3ccf4e -->
+                    <div class="icon">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <div class="text">
+                        <h4>Call Us</h4>
+                        <p>+250-791-847-408</p>
+                    </div>
+                </div>
+                <div class="logo">
+                    <h3>E-Haha</h3>
+                </div>
+                <div class="personal">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li class="balance">&dollar;800.00</li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="active" href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="main">
+                <div class="image">
+                    <img src="images/aboutMain.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <h2>About E-Haha Website</h2>
+                        <p>Delicious bites delivered to your doorstep, fresh and fast.</p>
+                        <a href="#aboutUs"><button>Learn More</button></a>
+                    </div>
+                </div>
+            </div>
+            <section id="aboutUs">
+                <div class="title">
+                    <h1>ABOUT US.</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="aboutOne">
+                    <div class="short">
+                        <p>About</p>
+                        <p>Team</p>
+                        <p>Press</p>
+                    </div>
+                    <div class="long">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet id esse non ea! Voluptatem temporibus, harum consequuntur perspiciatis mollitia itaque totam alias doloribus. Ipsam, id ipsum doloribus nam quisquam excepturi! Iure deserunt voluptate vero quam quae id voluptates tenetur consequuntur nisi debitis cum voluptatibus ullam cupiditate nihil expedita, saepe minima.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet id esse non ea! Voluptatem temporibus, harum consequuntur perspiciatis mollitia itaque totam alias doloribus. Ipsam, id ipsum doloribus nam quisquam excepturi! Iure deserunt voluptate vero quam quae id voluptates tenetur consequuntur nisi debitis cum voluptatibus ullam cupiditate nihil expedita, saepe minima.</p>
+                    </div>
+                </div>
+                <div class="imageOnly">
+                    <img src="images/imageNone.jpg" alt="">
+                </div>
+                <div class="quote">
+                    <div class="text">
+                        <p><i class="fa-solid fa-quote-left"></i> Savoring each bite, food becomes not just sustenance, but a symphony of delightful moments <i class="fa-solid fa-quote-right"></i></p>
+                    </div>
+                    <div class="image">
+                        <img src="images/quoteImage.jpg" alt="">
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="images">
+                        <div class="sideOne">
+                            <img src="images/teamOne.jpg" alt="">
+                            <img src="images/teamTwo.jpg" alt="">
+                        </div>
+                        <div class="sideTwo">
+                            <img src="images/teamThree.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            <h1>THE TEAM</h1>
+                            <div class="line"></div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora explicabo, vel quaerat voluptatem enim error nam ea cupiditate, quidem, cum modi! Obcaecati iusto maxime praesentium, voluptate iure expedita facere velit. Molestias reprehenderit adipisci iste magnam rem libero minima consequatur obcaecati. Earum assumenda ea sequi officiis reiciendis explicabo voluptates ullam nulla?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora explicabo, vel quaerat voluptatem enim error nam ea cupiditate, quidem, cum modi! Obcaecati iusto maxime praesentium, voluptate iure expedita facere velit. Molestias reprehenderit adipisci iste magnam rem libero minima consequatur obcaecati. Earum assumenda ea sequi officiis reiciendis explicabo voluptates ullam nulla?</p>
+                        <div class="cards">
+                            <div class="card">
+                                <h2>600</h2>
+                                <p>Lorem sit.</p>
+                            </div>
+
+                            <div class="card">
+                                <h2>700</h2>
+                                <p>adipisicing</p>
+                            </div>
+
+                            <div class="card">
+                                <h2>1.2</h2>
+                                <p>Lorem sit.</p>
+                            </div>
+
+                            <div class="card">
+                                <h2>110</h2>
+                                <p>adipisicing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="logo">
+                <h2>E-Haha</h2>
+            </div>
+            <div class="thanks">
+                Thank you for visiting our website
+            </div>
+            <div class="copy">
+                <p>Copyright &copy; 2023 <a href="#">nshiziboi</a></p>
+                <p>All rights reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>
